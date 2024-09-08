@@ -36,3 +36,38 @@ build/
 
 ### Mac OS ###
 .DS_Store
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# Default ignored files
+/shelf/
+/workspace.xml
+node_modules/
+dist/
+*.class
+*.py[cod]
+*.log
+*.jar
+.idea/
+TEST*.xml
+.DS_Stone
+Thumbs.db
+*.app
+*.exe
+*.war
+*.mp4
+*.mp3
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+# Maven
+log/
