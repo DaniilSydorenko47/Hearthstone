@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 public class MainField extends JComponent implements KeyListener, ActionListener {
 
-    private Image field = new ImageIcon("C:\\Hearthstone photos/field.png").getImage();
+    private Image field = new ImageIcon("hs-clone/field.png").getImage();
 
     public void paint(Graphics g){
         Graphics2D gr = (Graphics2D)g;
