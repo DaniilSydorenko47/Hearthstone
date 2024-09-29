@@ -24,6 +24,9 @@ public class Server {
 
                 // Чтение сообщения от клиента
                 String clientMessage = in.readLine();
+                if (clientMessage.equals("null")){
+                    break;
+                }
                 System.out.println(clientMessage);
                 // Отправка ответа клиенту
                 Scanner sc = new Scanner(System.in);
@@ -36,6 +39,8 @@ public class Server {
             clientSocket.close();
         } catch (IOException e) {
             System.out.println("Ошибка на сервере: " + e.getMessage());
+        } catch (NullPointerException e){
+            System.out.println("Клиент отключился");
         }
     }
 }
