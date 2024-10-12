@@ -16,11 +16,17 @@ public class Server {
             System.out.println("Напиши логин для подключения");
             Scanner login = new Scanner(System.in);
             String loginKey = login.nextLine();
+
             // Ожидание клиента
             Socket clientSocket = serverSocket.accept();
+
             // Чтение входящего логина
             BufferedReader loginIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String loginOut = loginIn.readLine();
+
+            // Отправка на проверку логина
+            PrintWriter writeOutLogin = new PrintWriter(clientSocket.getOutputStream(), true);
+            writeOutLogin.println(loginKey);
 
             // Проверка входящего логина
             if (loginKey.equals(loginOut)) {
@@ -57,4 +63,5 @@ public class Server {
             System.out.println("Клиент отключился");
         }
     }
+
 }

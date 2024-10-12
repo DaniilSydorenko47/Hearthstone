@@ -9,8 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2b7ead6-e51b-4b50-9e36-ec978bda5437" name="Changes" comment="Сервер теперь может переписоваться с клиентом">
+    <list default="true" id="c2b7ead6-e51b-4b50-9e36-ec978bda5437" name="Changes" comment="Добавлена возможность подключаться через логин, но не работает проверка на существование логина в классе ClientServer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs-clone/java/ClientServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/hs-clone/java/ClientServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs-clone/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/hs-clone/java/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ClientServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
     </list>
@@ -62,6 +64,20 @@
       <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\hs-clone\hs-clone" />
       <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\duklhasdlfjklsdahfjklhjsadlkflsf" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Hearthstone" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -168,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727634975065</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Добавлена возможность подключаться через логин, но не работает проверка на существование логина в классе ClientServer">
+      <option name="closed" value="true" />
+      <created>1728146957829</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1728146957829</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -176,6 +200,7 @@
     <MESSAGE value="added hs.exe" />
     <MESSAGE value="Создан сервер который читает, пока что, одно сообщение от клиента" />
     <MESSAGE value="Сервер теперь может переписоваться с клиентом" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сервер теперь может переписоваться с клиентом" />
+    <MESSAGE value="Добавлена возможность подключаться через логин, но не работает проверка на существование логина в классе ClientServer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность подключаться через логин, но не работает проверка на существование логина в классе ClientServer" />
   </component>
 </project>

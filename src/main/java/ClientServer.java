@@ -18,8 +18,13 @@ public class ClientServer {
             // Отправка логина для подключения
             PrintWriter loginOut = new PrintWriter(socket.getOutputStream(), true);
             loginOut.println(loginKey);
+
+            //Получение логина от сервера
+            BufferedReader getServerLogin = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            String serverLogin = getServerLogin.readLine();
+
             // Проверка на существование логина
-            if (socket.isClosed()){         //????????????????
+            if (!serverLogin.equals(loginKey)){
                 System.out.println("Вы ввели неправельный логин, такого логина не существует");
                 socket.close();
                 loginOut.close();
