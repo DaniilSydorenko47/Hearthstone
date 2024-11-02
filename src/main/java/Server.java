@@ -1,61 +1,70 @@
-import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.*;
 
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 
+// проблемы: клиент2 после закрытия сервера выдает ошибку, проблема с пересылкой сообщений
 public class Server {
     public static void main(String[] args) {
         int port = 8345;
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Сервер запущен и ждёт подключений на порту " + port);
-            System.out.println("Напиши логин для подключения");
-            Scanner login = new Scanner(System.in);
-            String loginKey = login.nextLine();
 
-            // Ожидание клиента
-            Socket clientSocket = serverSocket.accept();
+            // Ожидание клиентов
+            Socket client1 = serverSocket.accept();
+            Socket client2 = serverSocket.accept();
 
-            // Чтение входящего логина
-            BufferedReader loginIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            String loginOut = loginIn.readLine();
+            // Чтение входящего логина 1
+            BufferedReader readLogin1 = new BufferedReader(new InputStreamReader(client1.getInputStream()));
+            String loginOut1 = readLogin1.readLine();
 
-            // Отправка на проверку логина
-            PrintWriter writeOutLogin = new PrintWriter(clientSocket.getOutputStream(), true);
-            writeOutLogin.println(loginKey);
+            //Чтение входящего логина 2
+            BufferedReader readLogin2 = new BufferedReader(new InputStreamReader(client2.getInputStream()));
+            String loginOut2 = readLogin2.readLine();
 
-            // Проверка входящего логина
-            if (loginKey.equals(loginOut)) {
-                System.out.println("Клиент подключился!");
+            // Проверка логинов
+            if (loginOut1.equals(loginOut2)){
+                System.out.println("Клиенты подключились");
+
+                // Отправка ответа клиентам
+                PrintWriter answerOut1 = new PrintWriter(client1.getOutputStream(),true);
+                answerOut1.println("Вы подключились!");
+                PrintWriter answerOut2 = new PrintWriter(client2.getOutputStream(),true);
+                answerOut2.println("Вы подключились!");
             } else {
-                clientSocket.close();
+                System.out.println("Клиенты ввели неправельный логин");
+                PrintWriter answerOut1 = new PrintWriter(client1.getOutputStream(),true);
+                answerOut1.println("Вы ввели неправельный логин");
+                PrintWriter answerOut2 = new PrintWriter(client2.getOutputStream(),true);
+                answerOut2.println("Вы ввели неправельный логин");
+                client1.close();
+                client2.close();
                 serverSocket.close();
             }
+
+            // Потоки для отправки и получения данных
+            BufferedReader in1 = new BufferedReader(new InputStreamReader(client1.getInputStream()));
+            BufferedReader in2 = new BufferedReader(new InputStreamReader(client2.getInputStream()));
+            PrintWriter out1 = new PrintWriter(client1.getOutputStream(), true);
+            PrintWriter out2 = new PrintWriter(client2.getOutputStream(), true);
+
             while (true) {
-
-                // Потоки для отправки и получения данных
-                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-
                 // Чтение сообщения от клиента
-                String clientMessage = in.readLine();
-                if (clientMessage.equals("null")){
+                String clientMessage1 = in1.readLine();
+                if (clientMessage1.equals("null")){
                     break;
                 }
-                System.out.println(clientMessage);
-                // Отправка ответа клиенту
-                Scanner sc = new Scanner(System.in);
-                String sentence = sc.nextLine();
-                if (sentence.equals("stop")){
+                out2.println(clientMessage1);
+
+                String clientMessage2 = in2.readLine();
+                if (clientMessage2.equals("null")){
                     break;
                 }
-                out.println(sentence);
+                out1.println(clientMessage2);
             }
-            clientSocket.close();
+            client1.close();
+            client2.close();
 
         } catch (IOException e) {
             System.out.println("Ошибка на сервере: " + e.getMessage());
