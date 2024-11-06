@@ -9,11 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2b7ead6-e51b-4b50-9e36-ec978bda5437" name="Changes" comment="Добавлено подключение по логину">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client2.java" afterDir="false" />
+    <list default="true" id="c2b7ead6-e51b-4b50-9e36-ec978bda5437" name="Changes" comment="Доработана система отправки сообщений, добавлено 3 класса для получения и отправки сообщений. Надо доработать систему при закритии сервера и отправки пустих сообщений.">
+      <change afterPath="$PROJECT_DIR$/hs-clone" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ClientThreadRead.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ClientThreadSend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ServerThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/MainFieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -47,34 +57,99 @@
     "Application.Main.executor": "Run",
     "Application.Main2.executor": "Run",
     "Application.Server.executor": "Run",
+    "Application.Test.executor": "Run",
     "Attach to process.pid 14016.executor": "ProcessAttachDebug",
+    "Attach to process.pid 383236.executor": "ProcessAttachDebug",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/IntelliJ IDEA Community Edition 2023.3.4/Hearthstone/hs-clone/java",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
+    "last_opened_file_path": "C:/IntelliJ IDEA Community Edition 2023.3.4/Hearthstone/src/main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT",
+      "JAVA"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\src\main" />
+      <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\hs-clone\java1" />
+      <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\src\test\java" />
       <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\hs-clone\java" />
       <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\hs-clone" />
-      <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\hs-clone\hs-clone" />
-      <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\duklhasdlfjklsdahfjklhjsadlkflsf" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Hearthstone" />
+    <configuration name="Client1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Client1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Client2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Client2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientThreadRead" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ClientThreadRead" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientThreadSend" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ClientThreadSend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainField" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="MainField" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ServerThread" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ServerThread" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client1" />
+      <item itemvalue="Application.Client2" />
+      <item itemvalue="Application.ClientThreadRead" />
+      <item itemvalue="Application.ClientThreadSend" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MainField" />
+      <item itemvalue="Application.ServerThread" />
+      <item itemvalue="Application.Test" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -202,7 +277,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728749386036</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Добавлен клас Client2, доработана система подключения через логин">
+      <option name="closed" value="true" />
+      <created>1730571942168</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730571942168</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Добавлен клас Client2, доработана система подключения через логин">
+      <option name="closed" value="true" />
+      <created>1730571995709</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1730571995709</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -212,6 +303,7 @@
     <MESSAGE value="Сервер теперь может переписоваться с клиентом" />
     <MESSAGE value="Добавлена возможность подключаться через логин, но не работает проверка на существование логина в классе ClientServer" />
     <MESSAGE value="Добавлено подключение по логину" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлено подключение по логину" />
+    <MESSAGE value="Добавлен клас Client2, доработана система подключения через логин" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен клас Client2, доработана система подключения через логин" />
   </component>
 </project>

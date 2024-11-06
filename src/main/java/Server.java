@@ -1,10 +1,11 @@
-import java.io.*;
 
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 
-// проблемы: клиент2 после закрытия сервера выдает ошибку, проблема с пересылкой сообщений
-public class Server {
+
+public class Server extends Thread{
     public static void main(String[] args) {
         int port = 8345;
 
@@ -40,37 +41,36 @@ public class Server {
                 answerOut2.println("Вы ввели неправельный логин");
                 client1.close();
                 client2.close();
-                serverSocket.close();
             }
 
             // Потоки для отправки и получения данных
+            if (serverSocket.isClosed()){
+                client1.close();
+                client2.close();
+            }
             BufferedReader in1 = new BufferedReader(new InputStreamReader(client1.getInputStream()));
             BufferedReader in2 = new BufferedReader(new InputStreamReader(client2.getInputStream()));
             PrintWriter out1 = new PrintWriter(client1.getOutputStream(), true);
             PrintWriter out2 = new PrintWriter(client2.getOutputStream(), true);
 
-            while (true) {
-                // Чтение сообщения от клиента
-                String clientMessage1 = in1.readLine();
-                if (clientMessage1.equals("null")){
-                    break;
-                }
-                out2.println(clientMessage1);
 
-                String clientMessage2 = in2.readLine();
-                if (clientMessage2.equals("null")){
-                    break;
-                }
-                out1.println(clientMessage2);
-            }
-            client1.close();
-            client2.close();
+            ServerThread thread1 = new ServerThread(in1, out2);
+            ServerThread thread2 = new ServerThread(in2, out1);
+            thread1.start();
+            thread2.start();
+            thread1.join();
+            thread2.join();
 
+        } catch (SocketException e){
+            System.out.println(e.getMessage());
         } catch (IOException e) {
             System.out.println("Ошибка на сервере: " + e.getMessage());
         } catch (NullPointerException e){
             System.out.println("Клиент отключился");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 
 }
+
