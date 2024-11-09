@@ -10,17 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2b7ead6-e51b-4b50-9e36-ec978bda5437" name="Changes" comment="Доработана система отправки сообщений, добавлено 3 класса для получения и отправки сообщений. Надо доработать систему при закритии сервера и отправки пустих сообщений.">
-      <change afterPath="$PROJECT_DIR$/hs-clone" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ClientThreadRead.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ClientThreadSend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ServerThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/java/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/javaTest/Cl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs-clone" beforeDir="false" afterPath="$PROJECT_DIR$/hs-clone" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs-clone/java/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/hs-clone/java/Client1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs-clone/java/Client2.java" beforeDir="false" afterPath="$PROJECT_DIR$/hs-clone/java/Client2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs-clone/java/ClientThreadRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/hs-clone/java/ClientThreadRead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs-clone/java/ClientThreadSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/hs-clone/java/ClientThreadSend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs-clone/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/hs-clone/java/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientThreadRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientThreadRead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientThreadSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientThreadSend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MainFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/MainFieldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/MainFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/javaTest/MainFieldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/javaTest/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +55,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Cl.executor": "Run",
     "Application.Client1.executor": "Run",
     "Application.Client2.executor": "Run",
     "Application.ClientServer.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.Main2.executor": "Run",
+    "Application.MainFieldTest.executor": "Run",
     "Application.Server.executor": "Run",
     "Application.Test.executor": "Run",
     "Attach to process.pid 14016.executor": "ProcessAttachDebug",
@@ -64,7 +70,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/IntelliJ IDEA Community Edition 2023.3.4/Hearthstone/src/main",
+    "last_opened_file_path": "C:/IntelliJ IDEA Community Edition 2023.3.4/Hearthstone/hs-clone/java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -85,76 +91,6 @@
       <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\hs-clone\java" />
       <recent name="C:\IntelliJ IDEA Community Edition 2023.3.4\Hearthstone\hs-clone" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Client1" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Client1" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Client2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Client2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClientThreadRead" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="ClientThreadRead" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClientThreadSend" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="ClientThreadSend" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainField" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="MainField" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ServerThread" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="ServerThread" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Server" />
-      <item itemvalue="Application.Client1" />
-      <item itemvalue="Application.Client2" />
-      <item itemvalue="Application.ClientThreadRead" />
-      <item itemvalue="Application.ClientThreadSend" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.MainField" />
-      <item itemvalue="Application.ServerThread" />
-      <item itemvalue="Application.Test" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -293,8 +229,51 @@
       <option name="project" value="LOCAL" />
       <updated>1730571995709</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Доработана система отправки сообщений, добавлено 3 класса для получения и отправки сообщений. Надо доработать систему при закритии сервера и отправки пустих сообщений.">
+      <option name="closed" value="true" />
+      <created>1730928725456</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730928725456</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Доработана система отправки сообщений, добавлено 3 класса для получения и отправки сообщений. Надо доработать систему при закритии сервера и отправки пустих сообщений.">
+      <option name="closed" value="true" />
+      <created>1730928748541</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1730928748541</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Доработана система отправки сообщений, добавлено 3 класса для получения и отправки сообщений. Надо доработать систему при закритии сервера и отправки пустих сообщений.">
+      <option name="closed" value="true" />
+      <created>1730928853272</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730928853272</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Доработана система отправки сообщений, добавлено 3 класса для получения и отправки сообщений. Надо доработать систему при закритии сервера и отправки пустих сообщений.">
+      <option name="closed" value="true" />
+      <created>1730928908989</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1730928908989</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created new project, added Main class and MainField, which draws the image of field" />
@@ -304,6 +283,7 @@
     <MESSAGE value="Добавлена возможность подключаться через логин, но не работает проверка на существование логина в классе ClientServer" />
     <MESSAGE value="Добавлено подключение по логину" />
     <MESSAGE value="Добавлен клас Client2, доработана система подключения через логин" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен клас Client2, доработана система подключения через логин" />
+    <MESSAGE value="Доработана система отправки сообщений, добавлено 3 класса для получения и отправки сообщений. Надо доработать систему при закритии сервера и отправки пустих сообщений." />
+    <option name="LAST_COMMIT_MESSAGE" value="Доработана система отправки сообщений, добавлено 3 класса для получения и отправки сообщений. Надо доработать систему при закритии сервера и отправки пустих сообщений." />
   </component>
 </project>
